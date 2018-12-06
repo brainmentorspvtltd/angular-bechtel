@@ -1,0 +1,31 @@
+<div *ngIf="10>2">
+    <ul>
+
+        <li [ngClass]="{'red':customer.balance<9000,'green':customer.balance>=9000}" *ngFor="let customer of customers;let i=index">
+            {{i+1}} {{customer.id|prefix}} {{customer.name|uppercase}} {{customer.balance|currency:'USD':true}}
+
+        </li>
+    </ul>
+</div>
+<h3>
+
+
+
+    Your Name is {{name}}</h3>
+<button (click)="changeIt()">Change Title</button>
+
+<input type="text" [(ngModel)]="msg"> Message is {{msg}}
+
+<input type="text" placeholder="Type Name" (input)="takeInput($event)">
+
+<h1>
+
+
+
+    {{title}}</h1>
+<p [innerText]="title"></p>
+<div [class]="cssclass" [innerHTML]="str"></div>
+
+<div [hidden]="flag">
+    <h2>Hello Angular</h2>
+</div>
