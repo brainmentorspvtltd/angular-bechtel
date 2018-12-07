@@ -1,0 +1,16 @@
+<h1>Customer App</h1>
+<input type="text" placeholder="Type to Search By Id" (keyup)="doSearch($event)">
+<button (click)="searchIt()">Search</button>
+<br>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Balance</th>
+    </tr>
+    <tr *ngFor="let customer of customers">
+        <td>{{customer.id}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.balance}}</td>
+    </tr>
+</table>
