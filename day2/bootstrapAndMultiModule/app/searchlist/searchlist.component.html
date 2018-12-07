@@ -1,0 +1,16 @@
+<br>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of list">
+            <app-customerrow [cust]="customer"></app-customerrow>
+        </tr>
+    </tbody>
+
+</table>

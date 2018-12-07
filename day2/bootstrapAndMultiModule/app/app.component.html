@@ -1,0 +1,21 @@
+<p>
+    Counter is {{counter}}</p>
+<h1>Customer App</h1>
+<button (click)="getValue()">Get Value</button>
+<app-search (takeInput)="doSearch($event)"></app-search>
+<app-searchlist [list]="customers"></app-searchlist>
+<!-- <input type="text" placeholder="Type to Search By Id" (keyup)="doSearch($event)">
+<button (click)="searchIt()">Search</button> -->
+<!-- <br>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Balance</th>
+    </tr>
+    <tr *ngFor="let customer of customers">
+        <td>{{customer.id}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.balance}}</td>
+    </tr>
+</table> -->
