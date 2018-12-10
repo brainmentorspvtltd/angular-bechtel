@@ -1,0 +1,17 @@
+<h1>Ng if with else</h1>
+<div *ngIf="flag; else x">Hi Angular</div>
+<ng-template #x>
+    <p>Hello Angular</p>
+</ng-template>
+
+<!-- <p>APP - View Encapsulation Demo</p>
+<hr>
+<app-first></app-first>
+<app-second></app-second> -->
+<a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home</a>
+<a routerLinkActive="active" routerLink="/first/1001/Ram/9999">First</a>
+<a routerLinkActive="active" routerLink="/second">Second</a>
+<br>
+<button (click)="gotoFirst()">Go to First</button>
+<hr>
+<router-outlet></router-outlet>
