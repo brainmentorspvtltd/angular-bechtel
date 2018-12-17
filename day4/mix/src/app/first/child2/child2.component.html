@@ -1,0 +1,32 @@
+<h2>Reactive Forms</h2>
+<!-- <form [formGroup]="regForm" (ngSubmit)="save()">
+    <input type="text" formControlName="email" placeholder="Type Email">
+    <br>
+    <span *ngIf="!regForm.get('email').valid"></span>
+    <div formGroupName="personal">
+        <input type="text" formControlName="username" placeholder="Type UserName">
+        <span *ngIf="regForm.get('personal.username').touched && regForm.get('personal.username').invalid && regForm.get('personal.username').errors['required']"></span>
+    </div> -->
+
+<!-- Drop Down-->
+<select class="form-control" formControlName="country">
+      <option [ngValue]="selectedCountry">Select Country</option>
+        <option *ngFor="let c of countries" [ngValue]="c">
+          {{c}}
+        </option>
+      </select>
+<span *ngIf="regForm.get('country').touched && regForm.get('country').invalid && regForm.get('country').errors['required']">Please Select a Country</span>
+
+<!-- Drop Down-->
+<!-- <button (click)="add()">Add Experience</button>
+    <div *ngFor="let e of regForm.get('exp').controls;let i=index">
+        <input type="text" [formControlName]="i">
+    </div>
+
+    <button type='submit'>Register</button>
+    <br>
+
+
+
+
+</form> -->

@@ -1,0 +1,25 @@
+<p>Second - View Encapsulation Demo</p>
+<form (ngSubmit)="save(myform)" #myform="ngForm">
+    <input #uid="ngModel" type="text" ngModel name="email" required placeholder="Type email here">
+    <span></span>
+    <input #email="ngModel" type="text" ngModel name="uname" required placeholder="Type Name Here">
+    <select required [(ngModel)]="selectedCountry" name="country" #country="ngModel" ngModel>
+      <option [ngValue]="null">Select Country</option>
+      <option *ngFor="let country of countries" value="country">{{country}}
+
+      </option>
+    </select> Selected Country is {{selectedCountry}}
+    <br>
+    <span *ngIf="country.touched && country.invalid && country.errors['required']">Please Select At Least one Country</span>
+
+    <button type="submit">Submit</button>
+    <br> Pristine {{country.pristine}}
+    <br> Touched {{country.touched}}
+    <br> Untouched {{country.untouched}}
+    <br> Dirty {{country.dirty}}
+    <br> Valid {{country.valid}}
+    <br> Invalid {{country.invalid}}
+    <br> Error {{country.errors|json}}
+    <span *ngIf="uid.pristine && uid.touched">Userid Can't Be Empty</span>
+    <span *ngIf="uid.dirty && uid.invalid">Userid is in B/w 3 to 10 Alpha Chars</span>
+</form>

@@ -1,0 +1,33 @@
+<p>
+    Reactive Form Group Example
+
+</p>
+<form [formGroup]="myform">
+    <input type="text" formControlName="name">
+    <span *ngIf="myform.get('name').touched && myform.get('name').invalid && myform.get('name').errors['required']">Name Must be Enter</span>
+    <span *ngIf="myform.get('name').invalid && myform.get('name').errors['pattern']">Name Must be between 3 to 10 Characters</span> Error Staus is {{myform.get('name').errors|json}}
+    <button (click)="addGroup()">Add a Group</button>
+    <fieldset *ngFor="let f of myform.get('myformgroup').controls;let i=index">
+        <div formGroupName="{{i}}">
+            <input type="text" formControlName="city"> City is {{myform.get('myformgroup').controls[i].controls.city.touched}} {{myform.get('myformgroup').controls[i].controls.city.invalid}} {{myform.get('myformgroup').controls[i].controls.city.errors['required']}}
+            <span *ngIf="myform.get('myformgroup').controls[i].controls.city.touched &&
+            myform.get('myformgroup').controls[i].controls.city.invalid
+            && myform.get('myformgroup').controls[i].controls.city.errors['required']">
+          City can't be blank
+          </span>
+            <input type="text" formControlName="country">
+            <span *ngIf="myform.get('myformgroup').controls[i].controls.country.touched &&
+            myform.get('myformgroup').controls[i].controls.country.invalid
+            && myform.get('myformgroup').controls[i].controls.country.errors['required']">
+          Country can't be blank
+          </span>
+            <span *ngIf="myform.get('myformgroup').controls[i].controls.country.touched &&
+            myform.get('myformgroup').controls[i].controls.country.invalid
+            && myform.get('myformgroup').controls[i].controls.country.errors['pattern']">
+          Country must contains characters between 3 to 15 characters
+          </span>
+            <button (click)="removeGroup(i)">Remove</button>
+        </div>
+    </fieldset>
+</form>
+<hr>

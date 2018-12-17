@@ -1,0 +1,17 @@
+<p>
+    Using Form Builder Approach
+</p>
+<form (ngSubmit)="save()" [formGroup]="myGroup">
+    <button (click)="addAddress()">Add Address</button>
+    <div *ngFor="let a of myGroup.get('address').controls; let i = index;">
+        <div [formGroupName]="i">
+            <input formControlName="city" placeholder="City Name">
+            <span *ngIf="myGroup.get('address').controls[i].controls.city.touched &&  myGroup.get('address').controls[i].controls.city.invalid &&  myGroup.get('address').controls[i].controls.city.errors['required']">Fill the City</span>
+            <input formControlName="country" placeholder="Country Name">
+
+        </div>
+
+        Chosen name: {{ myGroup.controls.address.controls[i].controls.city.errors|json }}
+    </div>
+    <button type='submit'>Submit</button>
+</form>

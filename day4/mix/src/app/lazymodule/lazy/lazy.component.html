@@ -1,0 +1,21 @@
+<p>Async Pipe Demo</p>
+<button (click)="doAjax()">Call Server</button> Products are
+
+<div *ngIf="products|async;else showloading">
+    <ul>
+        <li *ngFor="let product of products|async">
+            {{product.id}} {{product.name}} {{product.price}}
+        </li>
+    </ul>
+</div>
+<ng-template #showloading>
+    <img src="../../../assets/images/loader.gif" alt="Loading.....">
+</ng-template>
+<hr>
+
+<button (click)="hideIt()">Using JQuery Example</button>
+<p>Show JQuery</p>
+<br>
+<hr>
+<h3>Http Interceptor Example</h3>
+<button (click)="loadProducts()">Load</button> {{customers|json}}
