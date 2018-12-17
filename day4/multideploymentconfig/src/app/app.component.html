@@ -1,0 +1,16 @@
+Env is {{env|json}}
+<button class='first' (click)="increment()">Plus</button>
+<h2 [innerText]="counter"></h2>
+<hr>
+<button class='last' (click)="callService()">Call Service</button>
+<p>Total Records are {{totalRecords}}</p>
+<hr>
+<button class='ajax' (click)="makeAjax()">Make Ajax</button>
+<h4></h4>
+<hr>
+<h3>JWT</h3>
+<input type="text" placeholder="Type Userid Here" #userid>
+<br>
+<input type="password" placeholder="Type Password Here" #pwd>
+<button (click)="doLogin(userid.value, pwd.value)">Login</button>
+<h2>{{message}}</h2>
